@@ -26,8 +26,7 @@ gulp.task('script', function() {
 
 gulp.task('less', function(){
     return gulp.src('./examples/*.less')
-                .pipe(less())
-                .pipe(gulp.dest(''));
+                .pipe(less());
 });
 
 
