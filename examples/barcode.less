@@ -1,0 +1,37 @@
+@black: #000;
+@white: #FFF;
+.invert() {
+    color: @white;
+    background-color: @black;
+}
+
+.barcode {
+    font-family: monospace;
+    font-size: 50px;
+    font-weight: 600;
+    
+    .word {
+        .slice {
+            color: @black;
+            background-color: @white;
+        }
+        &:nth-of-type(3n) {
+            
+            .slice-4-of-5 {
+                .invert()
+            }
+        }
+        
+        &:nth-of-type(3n+1) {
+            .slice-1-of-5, .slice-3-of-5, .slice-4-of-5 {
+                .invert()
+            }
+        }
+        
+        &:nth-of-type(3n+2) {
+            .slice-2-of-5, .slice-3-of-5 {
+                .invert()
+            }
+        }
+    }
+}

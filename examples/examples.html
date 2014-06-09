@@ -1,0 +1,358 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Slicer Examples</title>
+        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="../slicer.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/prettify.min.css"/>
+        <style type="text/css">
+        /*
+ * Derived from einaros's Sons of Obsidian theme at
+ * http://studiostyl.es/schemes/son-of-obsidian by
+ * Alex Ford of CodeTunnel:
+ * http://CodeTunnel.com/blog/post/71/google-code-prettify-obsidian-theme
+ */
+
+.str
+{
+    color: #EC7600;
+}
+.kwd
+{
+    color: #93C763;
+}
+.com
+{
+    color: #66747B;
+}
+.typ
+{
+    color: #678CB1;
+}
+.lit
+{
+    color: #FACD22;
+}
+.pun
+{
+    color: #F1F2F3;
+}
+.pln
+{
+    color: #F1F2F3;
+}
+.tag
+{
+    color: #8AC763;
+}
+.atn
+{
+    color: #E0E2E4;
+}
+.atv
+{
+    color: #EC7600;
+}
+.dec
+{
+    color: purple;
+}
+pre.prettyprint
+{
+    border: 0px solid #888;
+}
+ol.linenums
+{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.prettyprint {
+    background: #000;
+}
+li.L0, li.L1, li.L2, li.L3, li.L4, li.L5, li.L6, li.L7, li.L8, li.L9
+{
+    color: #555;
+    list-style-type: decimal;
+}
+li.L1, li.L3, li.L5, li.L7, li.L9 {
+    background: #111;
+}
+@media print
+{
+    .str
+    {
+        color: #060;
+    }
+    .kwd
+    {
+        color: #006;
+        font-weight: bold;
+    }
+    .com
+    {
+        color: #600;
+        font-style: italic;
+    }
+    .typ
+    {
+        color: #404;
+        font-weight: bold;
+    }
+    .lit
+    {
+        color: #044;
+    }
+    .pun
+    {
+        color: #440;
+    }
+    .pln
+    {
+        color: #000;
+    }
+    .tag
+    {
+        color: #006;
+        font-weight: bold;
+    }
+    .atn
+    {
+        color: #404;
+    }
+    .atv
+    {
+        color: #060;
+    }
+}
+        </style>
+    </head>
+    <body>
+        <h1>Slicer Examples</h1>
+        <section class="example">
+            <link rel="stylesheet" href="rainbow.css"/>
+            <script>
+                $(function() {
+                    $('.rainbow:eq(0)').sliceVertical(7);
+                    $('.rainbow:eq(1)').sliceHorizontal(7);
+                });
+            </script>
+            <h2>Rainbow</h2>
+            <pre class="prettyprint">
+            $(function() {
+                $('.rainbow:eq(0)').sliceVertical(7);
+                $('.rainbow:eq(1)').sliceHorizontal(7);
+            });
+            
+            .rainbow {
+              font-size: 50px;
+            }
+            .rainbow .slice-1-of-7 {
+              color: red;
+            }
+            .rainbow .slice-2-of-7 {
+              color: orange;
+            }
+            .rainbow .slice-3-of-7 {
+              color: yellow;
+            }
+            .rainbow .slice-4-of-7 {
+              color: green;
+            }
+            .rainbow .slice-5-of-7 {
+              color: blue;
+            }
+            .rainbow .slice-6-of-7 {
+              color: indigo;
+            }
+            .rainbow .slice-7-of-7 {
+              color: violet;
+            }
+
+            </pre>
+            <div class="rainbow">Vertical Rainbow</div>
+            <div class="rainbow">Horizontal Rainbow</div>
+        </section>
+        
+        <section class="example">
+            <link rel="stylesheet" href="barcode.css"/>
+            <script>
+                $(function() {
+                    $('.barcode').sliceVertical(5);
+                });
+            </script>
+            
+            <h2>Barcode</h2>
+            <pre class="prettyprint">
+            $(function() {
+                $('.barcode').sliceVertical(5);
+            });
+            
+            .barcode {
+              font-family: monospace;
+              font-size: 50px;
+              font-weight: 600;
+            }
+            .barcode .word .slice {
+              color: #000000;
+              background-color: #ffffff;
+            }
+            .barcode .word:nth-of-type(3n) .slice-4-of-5 {
+              color: #ffffff;
+              background-color: #000000;
+            }
+            .barcode .word:nth-of-type(3n+1) .slice-1-of-5,
+            .barcode .word:nth-of-type(3n+1) .slice-3-of-5,
+            .barcode .word:nth-of-type(3n+1) .slice-4-of-5 {
+              color: #ffffff;
+              background-color: #000000;
+            }
+            .barcode .word:nth-of-type(3n+2) .slice-2-of-5,
+            .barcode .word:nth-of-type(3n+2) .slice-3-of-5 {
+              color: #ffffff;
+              background-color: #000000;
+            }
+
+            </pre>
+            <div class="barcode">Make text look like a barcode!</div>
+        </section>
+        
+        <section class="example">
+            <link rel="stylesheet" href="lorem.css"/>
+            <script>
+                $(function() {
+                    $('.lorem-ipsum').sliceVertical();
+                });
+            </script>
+            <h2>Lorem Ipsum</h2>
+            <pre class="prettyprint">
+            $(function() {
+                $('.lorem-ipsum').sliceVertical(); //default value is 2
+            });
+            
+            .lorem-ipsum {
+              font-size: 24px;
+              font-weight: 600;
+            }
+            .lorem-ipsum .slice-1-of-2 {
+              color: red;
+            }
+            .lorem-ipsum .slice-2-of-2 {
+              color: blue;
+            }
+            .lorem-ipsum:hover .slice-1-of-2 {
+              color: blue;
+            }
+            .lorem-ipsum:hover .slice-2-of-2 {
+              color: red;
+            }
+            </pre>
+            <div class="lorem-ipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi adipiscing diam purus, tempus sodales turpis mollis nec. Nunc ac elit id tortor sodales rutrum vel vel est. In erat urna, molestie in vehicula at, commodo vel justo. Morbi consequat velit sed congue convallis. Pellentesque lorem leo, dapibus a nulla et, interdum semper orci. Aliquam consequat, lorem nec bibendum semper, magna sem accumsan nisl, a tincidunt quam risus quis augue. Interdum et malesuada fames ac ante ipsum primis in faucibus.</div>
+        </section>
+        
+        <section class="example">
+            <link rel="stylesheet" href="3-by-2.css"/>
+            <script>
+                $(function() {
+                    $('.three-by-two').sliceBoth(3, 2);
+                });
+            </script>
+            <h2>Three-by-Two</h2>
+            <pre class="prettyprint">
+            $(function() {
+                $('.three-by-two').sliceBoth(3, 2);
+            });
+            
+            .three-by-two {
+              font-family: monospace;
+              font-size: 100px;
+            }
+            .three-by-two .slice-1-1-of-3x2 {
+              color: #000;
+            }
+            .three-by-two .slice-2-1-of-3x2 {
+              color: #555;
+            }
+            .three-by-two .slice-3-1-of-3x2 {
+              color: #EEE;
+            }
+            .three-by-two .slice-1-2-of-3x2 {
+              color: #DDD;
+            }
+            .three-by-two .slice-2-2-of-3x2 {
+              color: #666;
+            }
+            .three-by-two .slice-3-2-of-3x2 {
+              color: #111;
+            }
+            </pre>
+            <div class="three-by-two">Think</div>
+        </section>
+        
+        <section class="example">
+            <link rel="stylesheet" href="chessboard.css"/>
+            <script>
+                $(function() {
+                    $('.chessboard').sliceBoth(8, 8);
+                });
+            </script>
+            <h2>Crazy Chessboard</h2>
+            <pre class="prettyprint">
+            $(function() {
+                $('.chessboard').sliceBoth(8, 8);
+            });
+            
+            @font-face {
+              font-family: 'Nova Square';
+              font-style: normal;
+              font-weight: 400;
+              src: local('Nova Square'), local('NovaSquare'), url(http://themes.googleusercontent.com/static/fonts/novasquare/v6/YsNHj2Yx5KzHzIjNe-czdIbN6UDyHWBl620a-IRfuBk.woff) format('woff');
+            }
+            .chessboard {
+              font-weight: 600;
+              font-family: 'Nova Square';
+              display: inline-block;
+              font-size: 200px;
+            }
+            .chessboard .slice {
+              color: green;
+              background-color: #FFF;
+              transition: background-color 2s;
+            }
+            .chessboard:hover .slice {
+              background-color: #000;
+            }
+            .chessboard .slice[class*=column-1]:nth-of-type(odd),
+            .chessboard .slice[class*=column-3]:nth-of-type(odd),
+            .chessboard .slice[class*=column-5]:nth-of-type(odd),
+            .chessboard .slice[class*=column-7]:nth-of-type(odd),
+            .chessboard .slice[class*=column-2]:nth-of-type(even),
+            .chessboard .slice[class*=column-4]:nth-of-type(even),
+            .chessboard .slice[class*=column-6]:nth-of-type(even),
+            .chessboard .slice[class*=column-8]:nth-of-type(even) {
+              background-color: #000;
+            }
+            .chessboard:hover .slice[class*=column-1]:nth-of-type(odd),
+            .chessboard:hover .slice[class*=column-3]:nth-of-type(odd),
+            .chessboard:hover .slice[class*=column-5]:nth-of-type(odd),
+            .chessboard:hover .slice[class*=column-7]:nth-of-type(odd),
+            .chessboard:hover .slice[class*=column-2]:nth-of-type(even),
+            .chessboard:hover .slice[class*=column-4]:nth-of-type(even),
+            .chessboard:hover .slice[class*=column-6]:nth-of-type(even),
+            .chessboard:hover .slice[class*=column-8]:nth-of-type(even) {
+              background-color: #FFF;
+            }
+            </pre>
+            <div class="chessboard">M</div>
+        </section>
+        
+        <script>
+  !function ($) {
+    $(function(){
+      window.prettyPrint && prettyPrint()
+    })
+  }(window.jQuery)
+</script>
+    </body>
+</html>
