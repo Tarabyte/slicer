@@ -1,0 +1,33 @@
+{
+  "name": "slicer",
+  "version": "0.0.0",
+  "description": "jQuery plugin that allows to style char parts separatelly.",
+  "main": "slicer.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Tarabyte/slicer.git"
+  },
+  "keywords": [
+    "typography",
+    "chars",
+    "jquery",
+    "plugin"
+  ],
+  "author": "tarabyte",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Tarabyte/slicer/issues"
+  },
+  "homepage": "https://github.com/Tarabyte/slicer",
+  "devDependencies": {
+    "gulp": "^3.7.0",
+    "gulp-uglify": "^0.3.0",
+    "gulp-size": "^0.4.0",
+    "gulp-rename": "^1.2.0",
+    "gulp-qunit": "^0.3.3",
+    "gulp-jshint": "^1.6.2"
+  }
+}
