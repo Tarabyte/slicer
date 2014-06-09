@@ -7,6 +7,9 @@
     <meta name="description" content="Slicer : jQuery plugin to slice chars and apply different styles to each part." />
 
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+      <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+      <script src="slicer.min.js"></script>
+      
 
     <title>Slicer</title>
   </head>
@@ -111,6 +114,15 @@
   <span class="k">color</span><span class="o">:</span> <span class="nb">violet</span><span class="p">;</span>
 <span class="p">}</span>
 </pre></div>
+          <div class="rainbow">Vertical Rainbow</div>
+          <div class="rainbow">Horizontal Rainbow</div>
+          <link rel="stylesheet" href="examples/rainbow.css"/>
+          <script>
+            $(function() {
+                $('.rainbow:eq(0)').sliceVertical(7);
+                $('.rainbow:eq(1)').sliceHorizontal(7);
+            });
+          </script>
       </section>
     </div>
 
