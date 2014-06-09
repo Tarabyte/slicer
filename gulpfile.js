@@ -5,6 +5,7 @@ var rename = require('gulp-rename');
 var size = require('gulp-size');
 var uglify = require('gulp-uglify');
 var qunit = require('gulp-qunit');
+var less = require('gulp-less');
 
 gulp.task('lint', function() {
     return gulp.src('slicer.js')
@@ -23,11 +24,19 @@ gulp.task('script', function() {
                 .pipe(size({title: 'gzip', gzip: true}));   
 });
 
+gulp.task('less', function(){
+    return gulp.src('./examples/*.less')
+                .pipe(less())
+                .pipe(gulp.dest(''));
+});
+
 
 gulp.task('watch', function() {
     gulp.watch('slicer.js', ['lint', 'script', 'test']);
     
     gulp.watch('test/test.js', ['test']);
+    
+    gulp.watch('examples/*.less', ['less']);
 });
 
 
@@ -36,4 +45,4 @@ gulp.task('test', function() {
 });
 
 
-gulp.task('default', ['lint', 'test', 'script', 'watch']);
+gulp.task('default', ['lint', 'test', 'script', 'less', 'watch']);
